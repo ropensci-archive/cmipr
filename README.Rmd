@@ -6,7 +6,10 @@ knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
   warning = FALSE,
-  message = FALSE
+  message = FALSE,
+  fig.path = "inst/img/",
+  fig.width = 10,
+  fig.height = 6
 )
 ```
 
@@ -28,30 +31,33 @@ devtools::install_github("ropenscilabs/cmip")
 library("cmip")
 ```
 
-## Fetch files
-
-Note, files are not loaded as they can be very large
+## List files
 
 ```{r}
-"xxx"
+head(list_files('bcsd/yearly'))
+head(list_files('bcsd/yearly/cccma_cgcm3_1.1'))
 ```
 
-## Load data
+## Download data
+
+```{r}
+key <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc"
+(res <- cmip_fetch(key))
+```
+
+## Read data into R
 
 Can load in a single file (gives `RasterLayer`), or many (gives `RasterBrick`)
 
 ```{r}
-"xxx"
-```
-
-```{r}
-"xxx"
+out <- cmip_read(res)
 ```
 
 ## Plot
 
-```{r}
-"xxx"
+```{r fig.cap=""}
+library("sp")
+plot(out)
 ```
 
 

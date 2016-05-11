@@ -23,39 +23,57 @@ devtools::install_github("ropenscilabs/cmip")
 library("cmip")
 ```
 
-## Fetch files
-
-Note, files are not loaded as they can be very large
+## List files
 
 
 ```r
-"xxx"
-#> [1] "xxx"
+head(list_files('bcsd/yearly'))
+#>         date            file
+#> 1 2007-09-16   bccr_bcm2_0.1
+#> 2 2007-09-16 cccma_cgcm3_1.1
+#> 3 2007-09-17 cccma_cgcm3_1.2
+#> 4 2007-09-17 cccma_cgcm3_1.3
+#> 5 2007-09-17 cccma_cgcm3_1.4
+#> 6 2007-09-17 cccma_cgcm3_1.5
+head(list_files('bcsd/yearly/cccma_cgcm3_1.1'))
+#>         date                                         file
+#> 1 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1950.nc
+#> 2 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1951.nc
+#> 3 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1952.nc
+#> 4 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1953.nc
+#> 5 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1954.nc
+#> 6 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1955.nc
 ```
 
-## Load data
+## Download data
+
+
+```r
+key <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc"
+(res <- cmip_fetch(key))
+#> <CMIP file>
+#>    File: /Users/sacmac/Library/Caches/cmip/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc
+#>    File size: 4.93842 MB
+```
+
+## Read data into R
 
 Can load in a single file (gives `RasterLayer`), or many (gives `RasterBrick`)
 
 
 ```r
-"xxx"
-#> [1] "xxx"
-```
-
-
-```r
-"xxx"
-#> [1] "xxx"
+out <- cmip_read(res)
 ```
 
 ## Plot
 
 
 ```r
-"xxx"
-#> [1] "xxx"
+library("sp")
+plot(out)
 ```
+
+![](inst/img/unnamed-chunk-7-1.png)
 
 
 ## Meta
