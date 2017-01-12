@@ -1,8 +1,7 @@
 #' Manage cached CMIP files
 #'
 #' @export
-#' @param files (character) one or more complete file names
-#' @param force (logical) Should files be force deleted? Default: \code{TRUE}
+#' @name cmip_cache
 #'
 #' @details \code{cache_delete} only accepts 1 file name, while
 #' \code{cache_delete_all} doesn't accept any names, but deletes all files.

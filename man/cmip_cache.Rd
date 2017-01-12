@@ -3,14 +3,6 @@
 \name{cmip_cache}
 \alias{cmip_cache}
 \title{Manage cached CMIP files}
-\usage{
-cmip_cache()
-}
-\arguments{
-\item{files}{(character) one or more complete file names}
-
-\item{force}{(logical) Should files be force deleted? Default: \code{TRUE}}
-}
 \description{
 Manage cached CMIP files
 }
@@ -20,38 +12,43 @@ Manage cached CMIP files
 For deleting many specific files,
 use \code{cache_delete} in a \code{\link{lapply}} type call
 
-We cache using \code{\link[rappdirs]{user_cache_dir}}, find your
-cache folder by executing \code{rappdirs::user_cache_dir("cmip")}
+We cache using \pkg{hoard} for managing cached files. Find where
+files are being cached with \code{cmip_cache$cache_path_get()}
 }
 \section{Functions}{
 
 \itemize{
- \item \code{cmip_cache_list()} returns a character vector of full path file
+ \item \code{cmip_cache$list()} returns a character vector of full path file
  names
- \item \code{cmip_cache_delete()} deletes one or more files, returns nothing
- \item \code{cmip_cache_delete_all()} delete all files, returns nothing
- \item \code{cmip_cache_details()} prints file name and file size for each
+ \item \code{cmip_cache$delete()} deletes one or more files, returns nothing
+ \item \code{cmip_cache$delete_all()} delete all files, returns nothing
+ \item \code{cmip_cache$details()} prints file name and file size for each
  file, supply with one or more files, or no files (and get details for
  all available)
 }
 }
 \examples{
 \dontrun{
+cmip_cache
+
 # list files in cache
-cmip_cache_list()
+cmip_cache$list()
 
 # List info for single files
-cmip_cache_details(files = cmip_cache_list()[1])
-cmip_cache_details(files = cmip_cache_list()[2])
+allfiles <- cmip_cache$list()
+cmip_cache$details(files = allfiles[1])
+cmip_cache$details(files = allfiles[2])
 
 # List info for all files
-cmip_cache_details()
+cmip_cache$details()
 
 # delete files by name in cache
-# cmip_cache_delete(files = cmip_cache_list()[1])
+# cmip_cache$delete(files = allfiles[1])
+# cmip_cache$list()
 
 # delete all files in cache
-# cmip_cache_delete_all()
+# cmip_cache$delete_all()
+# cmip_cache$list()
 }
 }
 
