@@ -9,7 +9,7 @@
 #' @return A character vector of full file paths. A print method makes a tidy
 #' return object
 #' @examples \dontrun{
-#' route <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc"
+#' key <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc"
 #' (res <- cmip_fetch(key))
 #' cmip_read(res)
 #' }

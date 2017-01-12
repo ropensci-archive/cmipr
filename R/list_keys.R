@@ -2,7 +2,7 @@
 #'
 #' @export
 #' @param route Route to a FTP folder on the CMIP site
-#' @return A \code{s3_object} class (a list, basically)
+#' @return A \code{tibble}
 #' @examples \dontrun{
 #' list_files('bcsd')
 #' list_files('bcsd/yearly')
@@ -22,11 +22,12 @@ cmip_GET_list <- function(route) {
 }
 
 parse_file <- function(x) {
-  tt <- read.delim(text = paste0(x, collapse = "\n"), sep = "",
+  tt <- utils::read.delim(text = paste0(x, collapse = "\n"), sep = "",
              header = FALSE, skip = 1, stringsAsFactors = FALSE)
-  data.frame(
-    date = as.Date(unname(apply(tt[,6:8], 1, paste0, collapse = "-")), "%b-%d-%Y"),
+  as_tbl(data.frame(
+    date = as.Date(unname(apply(tt[,6:8], 1, paste0, collapse = "-")),
+                   "%b-%d-%Y"),
     file = tt[,NCOL(tt)],
     stringsAsFactors = FALSE
-  )
+  ))
 }

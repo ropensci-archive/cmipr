@@ -3,18 +3,20 @@ Type: Package
 Title: Client for CMIP Data
 Description: Client for CMIP data. Data is stored on an FTP server, from
     which we provide functions to fetch data.
-Version: 0.0.0.9000
+Version: 0.0.6.9100
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
 License: MIT + file LICENSE
 URL: https://github.com/ropenscilabs/cmip
 BugReports: https://github.com/ropenscilabs/cmip/issues
 Imports:
-    utils,
     rappdirs (>= 0.3.1),
-    httr,
-    curl,
-    raster
+    raster (>= 2.5-8),
+    curl (>= 2.3),
+    crul (>= 0.2.1.9100),
+    tibble
 Suggests:
-    roxygen2 (>= 5.0.1)
+    roxygen2 (>= 5.0.1),
+    testthat
 RoxygenNote: 5.0.1
+Remotes: ropensci/crul

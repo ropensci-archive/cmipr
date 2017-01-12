@@ -10,7 +10,7 @@ list_files(route)
 \item{route}{Route to a FTP folder on the CMIP site}
 }
 \value{
-A \code{s3_object} class (a list, basically)
+A \code{tibble}
 }
 \description{
 List files/folders

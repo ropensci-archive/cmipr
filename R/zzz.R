@@ -12,6 +12,29 @@ last <- function(x) {
 }
 
 cmip_GET_write <- function(url, path, overwrite = TRUE, ...) {
-  suppressWarnings(GET(url, write_disk(path, overwrite = overwrite),
-      authenticate("anonymous", "myrmecocystus@gmail.com"), ...))
+  cli <- crul::HttpClient$new(
+    url = url,
+    headers = list(Authorization = "Basic anonymous:myrmecocystus@gmail.com")
+  )
+
+  if (!overwrite) {
+    if (file.exists(path)) {
+      stop("file exists and ovewrite != TRUE", call. = FALSE)
+    }
+  }
+
+  res <- tryCatch(
+    cli$get(disk = path),
+    error = function(e) e
+  )
+
+  if (inherits(res, "error")) {
+    unlink(path)
+    stop(res$message, call. = FALSE)
+  }
+  return(res)
 }
+
+as_tbl <- function(x) tibble::as_tibble(x)
+
+cmip_cache_path <- function() rappdirs::user_cache_dir("cmip")
