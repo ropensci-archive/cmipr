@@ -2,19 +2,9 @@
 % Please edit documentation in R/caching.R
 \name{cmip_cache}
 \alias{cmip_cache}
-\alias{cmip_cache_delete}
-\alias{cmip_cache_delete_all}
-\alias{cmip_cache_details}
-\alias{cmip_cache_list}
 \title{Manage cached CMIP files}
 \usage{
-cmip_cache_list()
-
-cmip_cache_delete(files, force = TRUE)
-
-cmip_cache_delete_all(force = TRUE)
-
-cmip_cache_details(files = NULL)
+cmip_cache()
 }
 \arguments{
 \item{files}{(character) one or more complete file names}

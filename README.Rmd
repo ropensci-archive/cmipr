@@ -15,9 +15,14 @@ knitr::opts_chunk$set(
 
 [![Build Status](https://travis-ci.org/ropenscilabs/cmip.svg?branch=master)](https://travis-ci.org/ropenscilabs/cmip)
 
-Client for CMIP data
+R client for CMIP (Coupled Model Intercomparison Project) data
 
-[CMIP Data available via FTP](http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/dcpInterface.html#Projections:%20Complete%20Archives)
+> Under the [World Climate Research Programme (WCRP)](https://www.wcrp-climate.org/) the Working Group on Coupled Modelling (WGCM) established the Coupled Model Intercomparison Project (CMIP) as a standard experimental protocol for studying the output of coupled atmosphere-ocean general circulation models (AOGCMs). Virtually the entire international climate modeling community has participated in this project since its inception in 1995.
+
+Links:
+
+* [CMIP](http://cmip-pcmdi.llnl.gov/)
+* [CMIP Data available via FTP](http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/dcpInterface.html#Projections:%20Complete%20Archives)
 
 ## Install
 
@@ -56,7 +61,6 @@ out <- cmip_read(res)
 ## Plot
 
 ```{r fig.cap=""}
-library("sp")
 plot(out)
 ```
 

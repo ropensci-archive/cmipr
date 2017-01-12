@@ -5,9 +5,14 @@ cmip
 
 [![Build Status](https://travis-ci.org/ropenscilabs/cmip.svg?branch=master)](https://travis-ci.org/ropenscilabs/cmip)
 
-Client for CMIP data
+R client for CMIP (Coupled Model Intercomparison Project) data
 
-[CMIP Data available via FTP](http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/dcpInterface.html#Projections:%20Complete%20Archives)
+> Under the [World Climate Research Programme (WCRP)](https://www.wcrp-climate.org/) the Working Group on Coupled Modelling (WGCM) established the Coupled Model Intercomparison Project (CMIP) as a standard experimental protocol for studying the output of coupled atmosphere-ocean general circulation models (AOGCMs). Virtually the entire international climate modeling community has participated in this project since its inception in 1995.
+
+Links:
+
+* [CMIP](http://cmip-pcmdi.llnl.gov/)
+* [CMIP Data available via FTP](http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/dcpInterface.html#Projections:%20Complete%20Archives)
 
 ## Install
 
@@ -28,7 +33,9 @@ library("cmip")
 
 ```r
 head(list_files('bcsd/yearly'))
+#> # A tibble: 6 × 2
 #>         date            file
+#>       <date>           <chr>
 #> 1 2007-09-16   bccr_bcm2_0.1
 #> 2 2007-09-16 cccma_cgcm3_1.1
 #> 3 2007-09-17 cccma_cgcm3_1.2
@@ -36,7 +43,9 @@ head(list_files('bcsd/yearly'))
 #> 5 2007-09-17 cccma_cgcm3_1.4
 #> 6 2007-09-17 cccma_cgcm3_1.5
 head(list_files('bcsd/yearly/cccma_cgcm3_1.1'))
+#> # A tibble: 6 × 2
 #>         date                                         file
+#>       <date>                                        <chr>
 #> 1 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1950.nc
 #> 2 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1951.nc
 #> 3 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1952.nc
@@ -69,7 +78,6 @@ out <- cmip_read(res)
 
 
 ```r
-library("sp")
 plot(out)
 ```
 
@@ -83,4 +91,4 @@ plot(out)
 * Get citation information for `cmip` in R doing `citation(package = 'cmip')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-[![rofooter](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)

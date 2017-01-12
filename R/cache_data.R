@@ -1,12 +1,7 @@
 # cache data
 cache_data <- function(key, cache = TRUE, overwrite = FALSE) {
-  cache_dir <- rappdirs::user_cache_dir("cmip")
-
-  if (!file.exists(cache_dir)) {
-    dir.create(cache_dir, recursive = TRUE)
-  }
-
-  file <- file.path(cache_dir, basename(key))
+  cmip_cache$mkdir()
+  file <- file.path(cmip_cache$cache_path_get(), basename(key))
 
   if (!file.exists(file)) {
     suppressMessages(cmip_GET_write(sub("/$", "", make_path(key)),

@@ -36,5 +36,3 @@ cmip_GET_write <- function(url, path, overwrite = TRUE, ...) {
 }
 
 as_tbl <- function(x) tibble::as_tibble(x)
-
-cmip_cache_path <- function() rappdirs::user_cache_dir("cmip")
