@@ -12,7 +12,7 @@ Manage cached CMIP files
 For deleting many specific files,
 use \code{cache_delete} in a \code{\link{lapply}} type call
 
-We cache using \pkg{hoard} for managing cached files. Find where
+We cache using \pkg{hoardr} for managing cached files. Find where
 files are being cached with \code{cmip_cache$cache_path_get()}
 }
 \section{Functions}{

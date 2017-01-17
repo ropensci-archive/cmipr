@@ -10,7 +10,7 @@ License: MIT + file LICENSE
 URL: https://github.com/ropenscilabs/cmip
 BugReports: https://github.com/ropenscilabs/cmip/issues
 Imports:
-    hoard (>= 0.0.3),
+    hoardr (>= 0.0.3),
     raster (>= 2.5-8),
     curl (>= 2.3),
     crul (>= 0.2.1.9100),
@@ -19,4 +19,4 @@ Suggests:
     roxygen2 (>= 5.0.1),
     testthat
 RoxygenNote: 5.0.1
-Remotes: ropensci/crul, ropensci/hoard
+Remotes: ropensci/crul, ropensci/hoardr
