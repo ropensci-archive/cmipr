@@ -1,23 +1,24 @@
 context("cmip_read")
 
-key <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2035.nc"
+#key <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2035.nc"
+key <- "bcsd/2deg/1950-2099/sresb1/sresb1.miub_echo_g.1.monthly.Tavg.RAW.1950-2099.nc"
 
 test_that("cmip_read works", {
   skip_on_cran()
 
+  cmip_cache$delete_all()
+
   res <- cmip_fetch(key)
 
-  # single
+  # cmip_file class
   aa <- cmip_read(res)
   expect_is(aa, "RasterLayer")
 
-  # a few
-  # bb <- cmip_read(res[1:2])
-  # expect_is(bb, "RasterStack")
+  # character string, a path
+  bb <- cmip_read(res[[1]])
+  expect_is(bb, "RasterLayer")
 
-  # all
-  # cc <- cmip_read(res)
-  # expect_is(cc, "RasterStack")
+  expect_identical(cmip_read(res), cmip_read(res[[1]]))
 })
 
 test_that("cmip_read - fails well", {
