@@ -36,3 +36,12 @@ cmip_GET_write <- function(url, path, overwrite = TRUE, ...) {
 }
 
 as_tbl <- function(x) tibble::as_tibble(x)
+
+assert <- function(x, y) {
+  if (!is.null(x)) {
+    if (!class(x) %in% y) {
+      stop(deparse(substitute(x)), " must be of class ",
+           paste0(y, collapse = ", "), call. = FALSE)
+    }
+  }
+}

@@ -4,22 +4,23 @@
 #' @param route Route to a FTP folder on the CMIP site
 #' @return A \code{tibble}
 #' @examples \dontrun{
-#' list_files()
-#' list_files('bcsd')
-#' list_files('bcsd/yearly')
-#' list_files('bcsd/yearly/cccma_cgcm3_1.1')
-#' list_files('cmip5')
-#' list_files('cmip5/bcsd')
-#' list_files('cmip5/bcsd/regrid')
-#' list_files('cmip5/bcsd/regrid/ccsm4')
-#' list_files('cmip5/bcsd/regrid/ccsm4/rcp26')
-#' list_files('cmip5/bcsd/regrid/ccsm4/rcp26/mon')
-#' list_files('cmip5/bcsd/regrid/ccsm4/rcp26/mon/r3i1p1')
-#' list_files('cmip5/bcsd/regrid/ccsm4/rcp26/mon/r3i1p1/tas')
-#' list_files('wwcra/monthly/riog/')
-#' list_files('wwcra/monthly/riog/sresb1.mpi_echam5.3/tmax')
+#' cmip_list_files()
+#' cmip_list_files('bcsd')
+#' cmip_list_files('bcsd/yearly')
+#' cmip_list_files('bcsd/yearly/cccma_cgcm3_1.1')
+#' cmip_list_files('cmip5')
+#' cmip_list_files('cmip5/bcsd')
+#' cmip_list_files('cmip5/bcsd/regrid')
+#' cmip_list_files('cmip5/bcsd/regrid/ccsm4')
+#' cmip_list_files('cmip5/bcsd/regrid/ccsm4/rcp26')
+#' cmip_list_files('cmip5/bcsd/regrid/ccsm4/rcp26/mon')
+#' cmip_list_files('cmip5/bcsd/regrid/ccsm4/rcp26/mon/r3i1p1')
+#' cmip_list_files('cmip5/bcsd/regrid/ccsm4/rcp26/mon/r3i1p1/tas')
+#' cmip_list_files('wwcra/monthly/riog/')
+#' cmip_list_files('wwcra/monthly/riog/sresb1.mpi_echam5.3/tmax')
 #' }
-list_files <- function(route = NULL) {
+cmip_list_files <- function(route = NULL) {
+  assert(route, "character")
   res <- cmip_GET_list(make_path(route))
   parse_file(res)
 }

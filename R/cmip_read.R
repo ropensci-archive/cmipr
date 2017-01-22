@@ -34,6 +34,7 @@ cmip_read.cmip_file <- function(x) {
 
 #' @export
 cmip_read.character <- function(x) {
+  stopifnot(all(file.exists(c(x, x))))
   if (length(x) == 1) {
     raster::raster(x)
   } else if (length(x) > 1) {

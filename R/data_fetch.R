@@ -14,6 +14,7 @@
 #' cmip_read(res)
 #' }
 cmip_fetch <- function(route, overwrite = FALSE) {
+  assert(overwrite, "logical")
   res <- cache_data(route, cache = TRUE, overwrite = overwrite)
   structure(res, class = "cmip_file")
 }
