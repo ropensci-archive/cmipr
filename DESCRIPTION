@@ -1,4 +1,4 @@
-Package: cmip
+Package: cmipr
 Type: Package
 Title: Client for CMIP Data
 Description: Client for CMIP data. Data is stored on an FTP server, from
@@ -7,8 +7,8 @@ Version: 0.0.8.9100
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
 License: MIT + file LICENSE
-URL: https://github.com/ropenscilabs/cmip
-BugReports: https://github.com/ropenscilabs/cmip/issues
+URL: https://github.com/ropenscilabs/cmipr
+BugReports: https://github.com/ropenscilabs/cmipr/issues
 Imports:
     hoardr (>= 0.0.3),
     raster (>= 2.5-8),

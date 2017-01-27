@@ -1,9 +1,9 @@
-cmip
+cmipr
 ====
 
 
 
-[![Build Status](https://travis-ci.org/ropenscilabs/cmip.svg?branch=master)](https://travis-ci.org/ropenscilabs/cmip)
+[![Build Status](https://travis-ci.org/ropenscilabs/cmipr.svg?branch=master)](https://travis-ci.org/ropenscilabs/cmipr)
 
 R client for CMIP (Coupled Model Intercomparison Project) data
 
@@ -11,7 +11,7 @@ R client for CMIP (Coupled Model Intercomparison Project) data
 
 Links:
 
-* [CMIP](http://cmip-pcmdi.llnl.gov/)
+* [CMIP](http://cmipr-pcmdi.llnl.gov/)
 * [CMIP Data available via FTP](http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/dcpInterface.html#Projections:%20Complete%20Archives)
 
 ## Install
@@ -20,19 +20,19 @@ Development version
 
 
 ```r
-devtools::install_github("ropenscilabs/cmip")
+devtools::install_github("ropenscilabs/cmipr")
 ```
 
 
 ```r
-library("cmip")
+library("cmipr")
 ```
 
 ## List files
 
 
 ```r
-head(list_files('bcsd/yearly'))
+head(cmip_list_files('bcsd/yearly'))
 #> # A tibble: 6 × 2
 #>         date            file
 #>       <date>           <chr>
@@ -42,7 +42,7 @@ head(list_files('bcsd/yearly'))
 #> 4 2007-09-17 cccma_cgcm3_1.3
 #> 5 2007-09-17 cccma_cgcm3_1.4
 #> 6 2007-09-17 cccma_cgcm3_1.5
-head(list_files('bcsd/yearly/cccma_cgcm3_1.1'))
+head(cmip_list_files('bcsd/yearly/cccma_cgcm3_1.1'))
 #> # A tibble: 6 × 2
 #>         date                                         file
 #>       <date>                                        <chr>
@@ -61,7 +61,7 @@ head(list_files('bcsd/yearly/cccma_cgcm3_1.1'))
 key <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc"
 (res <- cmip_fetch(key))
 #> <CMIP file>
-#>    File: /Users/sacmac/Library/Caches/cmip/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc
+#>    File: /Users/sacmac/Library/Caches/cmipr/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc
 #>    File size: 4.93842 MB
 ```
 
@@ -86,9 +86,9 @@ plot(out)
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropenscilabs/cmip/issues).
+* Please [report any issues or bugs](https://github.com/ropenscilabs/cmipr/issues).
 * License: MIT
-* Get citation information for `cmip` in R doing `citation(package = 'cmip')`
+* Get citation information for `cmipr` in R doing `citation(package = 'cmipr')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 [![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)

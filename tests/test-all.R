@@ -1,2 +1,2 @@
 library("testthat")
-test_check("cmip")
+test_check("cmipr")
