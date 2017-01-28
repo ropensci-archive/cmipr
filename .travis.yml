@@ -5,6 +5,7 @@ cache: packages
 addons:
   apt:
     packages:
+      - libnetcdf-dev
       - netcdf-bin
 
 r_binary_packages:
