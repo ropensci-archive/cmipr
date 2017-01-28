@@ -2,6 +2,14 @@ language: r
 sudo: false
 cache: packages
 
+addons:
+  apt:
+    packages:
+      - netcdf-bin
+
+r_binary_packages:
+  - ncdf4
+
 notifications:
   email:
     on_success: never
