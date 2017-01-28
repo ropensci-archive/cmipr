@@ -1,5 +1,5 @@
 cmipr
-====
+=====
 
 ```{r echo=FALSE}
 knitr::opts_chunk$set(
@@ -39,8 +39,8 @@ library("cmipr")
 ## List files
 
 ```{r}
-head(cmip_list_files('bcsd/yearly'))
-head(cmip_list_files('bcsd/yearly/cccma_cgcm3_1.1'))
+cmip_list_files('bcsd/yearly')
+cmip_list_files('bcsd/yearly/cccma_cgcm3_1.1')
 ```
 
 ## Download data

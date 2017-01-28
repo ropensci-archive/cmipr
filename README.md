@@ -1,5 +1,5 @@
 cmipr
-====
+=====
 
 
 
@@ -32,26 +32,36 @@ library("cmipr")
 
 
 ```r
-head(cmip_list_files('bcsd/yearly'))
-#> # A tibble: 6 × 2
-#>         date            file
-#>       <date>           <chr>
-#> 1 2007-09-16   bccr_bcm2_0.1
-#> 2 2007-09-16 cccma_cgcm3_1.1
-#> 3 2007-09-17 cccma_cgcm3_1.2
-#> 4 2007-09-17 cccma_cgcm3_1.3
-#> 5 2007-09-17 cccma_cgcm3_1.4
-#> 6 2007-09-17 cccma_cgcm3_1.5
-head(cmip_list_files('bcsd/yearly/cccma_cgcm3_1.1'))
-#> # A tibble: 6 × 2
-#>         date                                         file
-#>       <date>                                        <chr>
-#> 1 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1950.nc
-#> 2 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1951.nc
-#> 3 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1952.nc
-#> 4 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1953.nc
-#> 5 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1954.nc
-#> 6 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1955.nc
+cmip_list_files('bcsd/yearly')
+#> # A tibble: 41 × 2
+#>          date            file
+#>        <date>           <chr>
+#> 1  2007-09-16   bccr_bcm2_0.1
+#> 2  2007-09-16 cccma_cgcm3_1.1
+#> 3  2007-09-17 cccma_cgcm3_1.2
+#> 4  2007-09-17 cccma_cgcm3_1.3
+#> 5  2007-09-17 cccma_cgcm3_1.4
+#> 6  2007-09-17 cccma_cgcm3_1.5
+#> 7  2007-09-17      cnrm_cm3.1
+#> 8  2007-09-17   csiro_mk3_0.1
+#> 9  2007-09-17    gfdl_cm2_0.1
+#> 10 2007-09-17    gfdl_cm2_1.1
+#> # ... with 31 more rows
+cmip_list_files('bcsd/yearly/cccma_cgcm3_1.1')
+#> # A tibble: 900 × 2
+#>          date                                         file
+#>        <date>                                        <chr>
+#> 1  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1950.nc
+#> 2  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1951.nc
+#> 3  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1952.nc
+#> 4  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1953.nc
+#> 5  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1954.nc
+#> 6  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1955.nc
+#> 7  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1956.nc
+#> 8  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1957.nc
+#> 9  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1958.nc
+#> 10 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1959.nc
+#> # ... with 890 more rows
 ```
 
 ## Download data
