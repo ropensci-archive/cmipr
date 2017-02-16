@@ -1,9 +1,11 @@
 Package: cmipr
 Type: Package
-Title: Client for CMIP Data
-Description: Client for CMIP data. Data is stored on an FTP server, from
-    which we provide functions to fetch data.
-Version: 0.0.8.9100
+Title: Client for Coupled Model Intercomparison Project (CMIP) Data
+Description: Client for Coupled Model Intercomparison Project (CMIP) data
+		(<http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/>).
+		Data is stored on an FTP server, from which we provide
+		functions to fetch data and return tidy data.
+Version: 0.0.8.9310
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
 License: MIT + file LICENSE
@@ -18,6 +20,7 @@ Imports:
     tibble
 Suggests:
     roxygen2 (>= 5.0.1),
-    testthat
+    testthat,
+    covr
 RoxygenNote: 5.0.1
 Remotes: ropensci/crul, ropensci/hoardr

@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
 ```
 
 [![Build Status](https://travis-ci.org/ropenscilabs/cmipr.svg?branch=master)](https://travis-ci.org/ropenscilabs/cmipr)
+[![codecov](https://codecov.io/gh/ropenscilabs/cmipr/branch/master/graph/badge.svg)](https://codecov.io/gh/ropenscilabs/cmipr)
 
 R client for CMIP (Coupled Model Intercomparison Project) data
 

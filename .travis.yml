@@ -11,6 +11,9 @@ addons:
 r_binary_packages:
   - ncdf4
 
+after_success:
+  - Rscript -e 'covr::codecov()'
+
 notifications:
   email:
     on_success: never
