@@ -12,6 +12,7 @@ BugReports: https://github.com/ropenscilabs/cmipr/issues
 Imports:
     hoardr (>= 0.0.3),
     raster (>= 2.5-8),
+    ncdf4 (>= 1.15),
     curl (>= 2.3),
     crul (>= 0.2.1.9100),
     tibble
