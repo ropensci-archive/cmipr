@@ -30,4 +30,3 @@ key <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc"
 cmip_read(res)
 }
 }
-

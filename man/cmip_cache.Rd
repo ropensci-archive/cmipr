@@ -27,6 +27,7 @@ files are being cached with \code{cmip_cache$cache_path_get()}
  all available)
 }
 }
+
 \examples{
 \dontrun{
 cmip_cache
@@ -51,4 +52,3 @@ cmip_cache$details()
 # cmip_cache$list()
 }
 }
-

@@ -32,4 +32,3 @@ cmip_read(res[1])
 plot(cmip_read(res))
 }
 }
-

@@ -1,0 +1,134 @@
+<!--
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{cmipr introduction}
+%\VignetteEncoding{UTF-8}
+-->
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.path = "img/"
+)
+```
+
+cmipr introduction
+==================
+
+`cmipr` - Client to work with CMIP data - downscaled climate and hydrology 
+projections. Package lists avail. files, downloads and caches, and reads 
+into raster objects. 
+
+## Install
+
+Dev version
+
+```{r eval=FALSE}
+devtools::install_github("ropenscilabs/cmipr")
+```
+
+```{r}
+library("cmipr")
+```
+
+```{r echo=FALSE}
+cmip_cache$delete_all()
+```
+
+## List files
+
+List files in their FTP directory
+
+```{r}
+cmip_list_files()
+```
+
+```{r}
+cmip_list_files('cmip5/bcsd')
+```
+
+## Fetch data
+
+Define a path to a file.
+
+```{r}
+key <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc"
+```
+
+Fetch the file
+
+```{r}
+(res <- cmip_fetch(key))
+```
+
+### Caching
+
+When requesting data, we first check if you already have that data cached.
+You'll know when this happens as the request will finish much faster when
+you have data cached already.
+
+We use the package `hoardr` to manage cached files.
+
+On package load, a hoardr object is created, it's an R6 object.
+
+```{r}
+cmip_cache
+```
+
+See `?cmip_cache` for all cache management help.
+
+The `cmip_cache` object has variables and functions on it. For example, 
+we can get the cache path
+
+```{r}
+cmip_cache$cache_path_get()
+```
+
+Or list all files in the cache
+
+```{r}
+cmip_cache$list()
+```
+
+Or delete all files (won't run this here though)
+
+```{r eval=FALSE}
+cmip_cache$delete_all()
+```
+
+
+## Read data
+
+After fetching data, you need to read the data into a `RasterLayer` or
+`RasterBrick` object
+
+Get some data first
+
+```{r}
+keys <- c(
+  "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2039.nc",
+  "bcsd/yearly/gfdl_cm2_1.1/gfdl_cm2_1.1.sresa1b.monthly.Prcp.2033.nc"
+)
+res <- lapply(keys, cmip_fetch)
+```
+
+You can read a single file
+
+```{r}
+cmip_read(res[[1]])
+```
+
+many files
+
+```{r}
+cmip_read(unlist(res))
+```
+
+## Visualize
+
+```{r fig.width=10, fig.height=8}
+library("raster")
+plot(cmip_read(res[[1]]))
+```

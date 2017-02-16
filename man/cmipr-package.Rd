@@ -2,8 +2,8 @@
 % Please edit documentation in R/cmip-package.R
 \docType{package}
 \name{cmipr-package}
-\alias{cmipr}
 \alias{cmipr-package}
+\alias{cmipr}
 \title{cmipr}
 \description{
 R client for CMIP (Coupled Model Intercomparison Project) data
@@ -12,4 +12,3 @@ R client for CMIP (Coupled Model Intercomparison Project) data
 Scott Chamberlain \email{myrmecocystus@gmail.com}
 }
 \keyword{package}
-
