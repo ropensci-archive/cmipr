@@ -2,7 +2,7 @@
 % Please edit documentation in R/cmip_read.R
 \name{cmip_read}
 \alias{cmip_read}
-\title{Reaa data into R}
+\title{Read data into R}
 \usage{
 cmip_read(x)
 }
@@ -14,7 +14,7 @@ cmip_read(x)
 \code{RasterLayer} or \code{RasterBrick} class object
 }
 \description{
-Reaa data into R
+Read data into R
 }
 \examples{
 \dontrun{

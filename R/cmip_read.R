@@ -1,4 +1,4 @@
-#' Reaa data into R
+#' Read data into R
 #'
 #' @export
 #' @param x A \code{ccafs_files} object, the output from a call to

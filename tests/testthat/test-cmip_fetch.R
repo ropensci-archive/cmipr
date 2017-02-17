@@ -1,7 +1,7 @@
 context("cmip_fetch")
 
 # key <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2035.nc"
-key <- "bcsd/2deg/1950-2099/sresb1/sresb1.miub_echo_g.1.monthly.Tavg.RAW.1950-2099.nc"
+key <- "bcsd/2deg/1950-2099/sresb1/sresb1.miub_echo_g.1.monthly.Tavg.RAW.1950-2099.nc" # nolint
 
 test_that("cmip_fetch works", {
   skip_on_cran()
