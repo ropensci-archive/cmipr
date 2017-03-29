@@ -12,7 +12,7 @@ R client for CMIP (Coupled Model Intercomparison Project) data
 
 Links:
 
-* CMIP (http://cmipr-pcmdi.llnl.gov/)
+* CMIP (http://cmip-pcmdi.llnl.gov/)
 * [CMIP Data available via FTP](http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/dcpInterface.html#Projections:%20Complete%20Archives)
 
 ## Install
