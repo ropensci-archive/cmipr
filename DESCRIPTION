@@ -5,9 +5,9 @@ Description: Client for Coupled Model Intercomparison Project (CMIP) data
 		(<http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/>).
 		Data is stored on an FTP server, from which we provide
 		functions to fetch data and return tidy data.
-Version: 0.0.8.9315
+Version: 0.0.8.9621
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
-    email = "myrmecocystus@gmail.com")
+    email = "sckott@protonmail.com")
 License: MIT + file LICENSE
 URL: https://github.com/ropenscilabs/cmipr
 BugReports: https://github.com/ropenscilabs/cmipr/issues
