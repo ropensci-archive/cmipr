@@ -5,6 +5,7 @@ cmipr
 
 [![Build Status](https://travis-ci.org/ropenscilabs/cmipr.svg?branch=master)](https://travis-ci.org/ropenscilabs/cmipr)
 [![codecov](https://codecov.io/gh/ropenscilabs/cmipr/branch/master/graph/badge.svg)](https://codecov.io/gh/ropenscilabs/cmipr)
+[![review](https://badges.ropensci.org/99_status.svg)](https://github.com/ropensci/onboarding/issues/99)
 
 R client for CMIP (Coupled Model Intercomparison Project) data
 
@@ -34,35 +35,35 @@ library("cmipr")
 
 ```r
 cmip_list_files('bcsd/yearly')
-#> # A tibble: 41 × 2
-#>          date            file
-#>        <date>           <chr>
-#> 1  2007-09-16   bccr_bcm2_0.1
-#> 2  2007-09-16 cccma_cgcm3_1.1
-#> 3  2007-09-17 cccma_cgcm3_1.2
-#> 4  2007-09-17 cccma_cgcm3_1.3
-#> 5  2007-09-17 cccma_cgcm3_1.4
-#> 6  2007-09-17 cccma_cgcm3_1.5
-#> 7  2007-09-17      cnrm_cm3.1
-#> 8  2007-09-17   csiro_mk3_0.1
-#> 9  2007-09-17    gfdl_cm2_0.1
-#> 10 2007-09-17    gfdl_cm2_1.1
-#> # ... with 31 more rows
+#> # A tibble: 40 x 2
+#>    date       file            
+#>    <date>     <chr>           
+#>  1 2007-09-16 cccma_cgcm3_1.1 
+#>  2 2007-09-17 cccma_cgcm3_1.2 
+#>  3 2007-09-17 cccma_cgcm3_1.3 
+#>  4 2007-09-17 cccma_cgcm3_1.4 
+#>  5 2007-09-17 cccma_cgcm3_1.5 
+#>  6 2007-09-17 cnrm_cm3.1      
+#>  7 2007-09-17 csiro_mk3_0.1   
+#>  8 2007-09-17 gfdl_cm2_0.1    
+#>  9 2007-09-17 gfdl_cm2_1.1    
+#> 10 2007-09-17 giss_model_e_r.1
+#> # ... with 30 more rows
 cmip_list_files('bcsd/yearly/cccma_cgcm3_1.1')
-#> # A tibble: 900 × 2
-#>          date                                         file
-#>        <date>                                        <chr>
-#> 1  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1950.nc
-#> 2  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1951.nc
-#> 3  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1952.nc
-#> 4  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1953.nc
-#> 5  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1954.nc
-#> 6  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1955.nc
-#> 7  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1956.nc
-#> 8  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1957.nc
-#> 9  2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1958.nc
-#> 10 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1959.nc
-#> # ... with 890 more rows
+#> # A tibble: 899 x 2
+#>    date       file                                        
+#>    <date>     <chr>                                       
+#>  1 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1951.nc
+#>  2 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1952.nc
+#>  3 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1953.nc
+#>  4 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1954.nc
+#>  5 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1955.nc
+#>  6 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1956.nc
+#>  7 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1957.nc
+#>  8 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1958.nc
+#>  9 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1959.nc
+#> 10 2007-09-16 cccma_cgcm3_1.1.sresa1b.monthly.Prcp.1960.nc
+#> # ... with 889 more rows
 ```
 
 ## Download data
@@ -72,7 +73,7 @@ cmip_list_files('bcsd/yearly/cccma_cgcm3_1.1')
 key <- "bcsd/yearly/cnrm_cm3.1/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc"
 (res <- cmip_fetch(key))
 #> <CMIP file>
-#>    File: /Users/sacmac/Library/Caches/cmipr/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc
+#>    File: /Users/sckott/Library/Caches/R/cmipr/cnrm_cm3.1.sresa1b.monthly.Prcp.2034.nc
 #>    File size: 4.93842 MB
 ```
 
@@ -100,6 +101,6 @@ plot(out)
 * Please [report any issues or bugs](https://github.com/ropenscilabs/cmipr/issues).
 * License: MIT
 * Get citation information for `cmipr` in R doing `citation(package = 'cmipr')`
-* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 [![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
